@@ -1,0 +1,85 @@
+@import '_variables';
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: $testBackground;
+}
+.navItem {
+  button {
+    background-color: transparent;
+    border: none;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+//desktop
+@media (min-width: 767px) {
+  body {
+    font-size: 20px;
+  }
+  #navbar {
+    width: 100%;
+    display: flex;
+    .navItem {
+      text-align: center;
+      //determines the column width
+      width: 33%;
+      button {
+        font-size: $desktopNavFontSize;
+        margin: {
+          bottom: 10%;
+          top: 10%;
+        }
+      }
+      #bio, #project, #contact {
+        padding: {
+          left: $desktopContentPadding;
+          right: $desktopContentPadding;
+        }
+        text-align: left;
+      }
+    }
+  }
+}
+
+//mobile
+@media (max-width: 767px) {
+  body {
+    font-size: 20px;
+  }
+  #navBar {
+    width: 100%;
+  }
+  .navItem {
+    margin: {
+      top: 5%;
+      bottom: 5%;
+    }
+    div {
+      text-align: center;
+      button {
+        font-size: $mobileNavFontSize;
+      }
+    }
+  }
+  #bio, #contact, .projectItem {
+    div {
+      text-align: left;
+      padding: {
+        left: $mobileContentPadding;
+        right: $mobileContentPadding;
+      }
+    }
+  }
+  .projectItem {
+    div {
+      padding: {
+        top: 3%;
+        bottom: 3%;
+      }
+    }
+  }
+}
